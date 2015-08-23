@@ -9,7 +9,7 @@ def arp_display(pkt):
     if pkt[ARP].psrc == '0.0.0.0': # ARP Probe
       if pkt[ARP].hwsrc == '74:75:48:60:ba:5f': # Glad
         print "Pushed Glad"
-        r = requests.post("https://maker.ifttt.com/trigger/dash1/with/key/%s"%(SECRET_KEY))
+        r = requests.post("https://maker.ifttt.com/trigger/dash/with/key/%s"%(SECRET_KEY))
       else:
         print "ARP Probe from unknown device: " + pkt[ARP].hwsrc
 
